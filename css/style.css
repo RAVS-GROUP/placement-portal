@@ -218,3 +218,81 @@ margin-left:0;
 }
 
 }
+
+/* ===========================
+ABOUT
+=========================== */
+
+h2{
+
+color:var(--primary);
+
+}
+
+.about-img{
+
+border-radius:20px;
+
+}
+
+/* ===========================
+IMPACT
+=========================== */
+
+.impact-section{
+
+padding:90px 0;
+
+background:#f5f9fc;
+
+}
+
+.impact-card{
+
+background:white;
+
+padding:40px 20px;
+
+border-radius:18px;
+
+text-align:center;
+
+transition:.3s;
+
+margin-bottom:25px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.impact-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.impact-card i{
+
+font-size:45px;
+
+color:var(--secondary);
+
+margin-bottom:20px;
+
+}
+
+.impact-card h3{
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--primary);
+
+}
+
+.impact-card p{
+
+margin-top:10px;
+
+}
