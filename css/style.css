@@ -1,1 +1,220 @@
+/* ==========================================
+   UDAYAN CARE CAREER PORTAL
+   Developed By: Shubham Sharma
+========================================== */
 
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#F8FAFC;
+
+    color:#1F2937;
+
+    overflow-x:hidden;
+
+}
+
+/* COLORS */
+
+:root{
+
+    --primary:#0F4C81;
+
+    --secondary:#2E8B57;
+
+    --orange:#F4A261;
+
+    --light:#F8FAFC;
+
+    --dark:#1F2937;
+
+    --white:#ffffff;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    padding:18px 0;
+
+}
+
+.navbar-brand{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--primary)!important;
+
+}
+
+.nav-link{
+
+    font-weight:500;
+
+    color:#444!important;
+
+    margin-left:18px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:var(--primary)!important;
+
+}
+
+/* HERO SECTION */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:80px 0;
+
+}
+
+.hero-tag{
+
+    background:#E8F2FA;
+
+    color:var(--primary);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    display:inline-block;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    color:var(--primary);
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    font-size:18px;
+
+    color:#555;
+
+    line-height:32px;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+}
+
+.btn-primary:hover{
+
+    background:#08355c;
+
+}
+
+.btn-outline-primary{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    padding:12px 28px;
+
+    border-radius:8px;
+
+}
+
+.btn-outline-primary:hover{
+
+    background:var(--primary);
+
+}
+
+/* IMAGE */
+
+.hero-image{
+
+    width:100%;
+
+    max-width:520px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+.hero{
+
+text-align:center;
+
+padding:60px 0;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero-image{
+
+margin-top:50px;
+
+}
+
+.nav-link{
+
+margin-left:0;
+
+}
+
+}
