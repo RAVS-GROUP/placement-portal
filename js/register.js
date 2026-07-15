@@ -1,4 +1,4 @@
-const SCRIPT_URL = "YAHAN_APNA_WEB_APP_URL_PASTE_KARO";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznSxz0Yo9QbfswPa3McNsVfy3rIWE2aP6-ns5tAwvyo0T5CG7Zn4uMqrgazVoeLdjuEg/exec";
 
 
 document
