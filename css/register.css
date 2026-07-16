@@ -1,1 +1,267 @@
+/* ==========================================
+   UDAYAN CARE CAREER PORTAL
+   Candidate Registration Wizard
+   Developed By: Shubham Sharma
+========================================== */
 
+/* ---------- BODY ---------- */
+
+body{
+    background:#F4F7FB;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ---------- SECTION ---------- */
+
+.registration-section{
+    padding:60px 0;
+}
+
+/* ---------- CARD ---------- */
+
+.registration-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/* ---------- HEADER ---------- */
+
+.registration-card h2{
+
+    color:#0F4C81;
+
+    font-weight:700;
+
+}
+
+.registration-card p{
+
+    color:#666;
+
+    margin-top:10px;
+
+}
+
+/* ---------- PROGRESS ---------- */
+
+.progress{
+
+    background:#dbe5ef;
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    background:#0F4C81 !important;
+
+    transition:.4s;
+
+}
+
+/* ---------- STEP INDICATOR ---------- */
+
+.step-indicator{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:40px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.step{
+
+    flex:1;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+.step span{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#d9d9d9;
+
+    color:#555;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.step.active span{
+
+    background:#0F4C81;
+
+    color:#fff;
+
+}
+
+.step p{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+/* ---------- FORM ---------- */
+
+.form-step{
+
+    display:none;
+
+}
+
+.form-step.active{
+
+    display:block;
+
+}
+
+/* ---------- INPUT ---------- */
+
+label{
+
+    font-weight:500;
+
+    margin-bottom:8px;
+
+}
+
+.form-control,
+.form-select{
+
+    height:48px;
+
+    border-radius:8px;
+
+}
+
+textarea.form-control{
+
+    height:120px;
+
+}
+
+/* ---------- BUTTON ---------- */
+
+.button-area{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:40px;
+
+}
+
+.button-area .btn{
+
+    min-width:140px;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:992px){
+
+.registration-card{
+
+padding:30px;
+
+}
+
+.step p{
+
+font-size:12px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.step-indicator{
+
+gap:20px;
+
+}
+
+.step{
+
+flex:0 0 30%;
+
+margin-bottom:20px;
+
+}
+
+.button-area{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.button-area .btn{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.registration-card{
+
+padding:20px;
+
+}
+
+.registration-card h2{
+
+font-size:28px;
+
+}
+
+}
