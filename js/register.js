@@ -1,109 +1,140 @@
-/* ==========================================
-   UDAYAN CARE CAREER PORTAL
-   Candidate Registration Wizard
-   Developed By: Shubham Sharma
-========================================== */
+// ==========================================
+// UDAYAN CARE CAREER PORTAL
+// Candidate Registration JS
+// ==========================================
 
-const formSteps = document.querySelectorAll(".form-step");
-const stepIndicators = document.querySelectorAll(".step");
-const progressBar = document.getElementById("progressBar");
-
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
 
 let currentStep = 0;
 
-// -------------------------------
-// Show Current Step
-// -------------------------------
+
+const steps = document.querySelectorAll(".form-step");
+
+const indicators = document.querySelectorAll(".step");
+
+const nextBtn = document.getElementById("nextBtn");
+
+const prevBtn = document.getElementById("prevBtn");
+
+const progressBar = document.getElementById("progressBar");
+
+
+
+// Initial Load
+
+showStep(currentStep);
+
+
+
+// NEXT BUTTON
+
+nextBtn.addEventListener("click", function(){
+
+    if(currentStep < steps.length - 1){
+
+        currentStep++;
+
+        showStep(currentStep);
+
+    }
+
+});
+
+
+
+
+// PREVIOUS BUTTON
+
+prevBtn.addEventListener("click", function(){
+
+    if(currentStep > 0){
+
+        currentStep--;
+
+        showStep(currentStep);
+
+    }
+
+});
+
+
+
+
+
+// SHOW STEP FUNCTION
 
 function showStep(step){
 
+
     // Hide all steps
-    formSteps.forEach((form)=>{
-        form.classList.remove("active");
+
+    steps.forEach(function(item){
+
+        item.classList.remove("active");
+
     });
+
+
+
+    // Remove active indicator
+
+    indicators.forEach(function(item){
+
+        item.classList.remove("active");
+
+    });
+
+
 
     // Show current step
-    formSteps[step].classList.add("active");
 
-    // Update top circles
-    stepIndicators.forEach((item,index)=>{
+    steps[step].classList.add("active");
 
-        if(index<=step){
-            item.classList.add("active");
-        }
-        else{
-            item.classList.remove("active");
-        }
 
-    });
 
-    // Progress Bar
-    let percent=((step+1)/formSteps.length)*100;
+    // Active step number
 
-    progressBar.style.width=percent+"%";
+    indicators[step].classList.add("active");
 
-    // Previous Button
 
-    if(step===0){
+
+    // Update progress
+
+    let progress = ((step + 1) / steps.length) * 100;
+
+
+    progressBar.style.width = progress + "%";
+
+
+
+    // Button control
+
+
+    if(step === 0){
 
         prevBtn.style.display="none";
 
-    }else{
+    }
+
+    else{
 
         prevBtn.style.display="inline-block";
 
     }
 
-    // Next Button
 
-    if(step===formSteps.length-1){
+
+    if(step === steps.length - 1){
 
         nextBtn.innerHTML="Submit";
 
-    }else{
+    }
 
-        nextBtn.innerHTML="Next →";
+    else{
+
+        nextBtn.innerHTML="Next";
 
     }
+
+
 
 }
-
-showStep(currentStep);
-
-// -------------------------------
-// Next Button
-// -------------------------------
-
-nextBtn.addEventListener("click",function(){
-
-    // Last Step
-
-    if(currentStep===formSteps.length-1){
-
-        alert("Form Submitted Successfully.");
-
-        return;
-
-    }
-
-    currentStep++;
-
-    showStep(currentStep);
-
-});
-
-// -------------------------------
-// Previous Button
-// -------------------------------
-
-prevBtn.addEventListener("click",function(){
-
-    if(currentStep===0) return;
-
-    currentStep--;
-
-    showStep(currentStep);
-
-});
