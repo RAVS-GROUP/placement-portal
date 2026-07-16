@@ -29,12 +29,16 @@ showStep(currentStep);
 
 nextBtn.addEventListener("click", function () {
 
-    if (currentStep === steps.length - 1) {
-        return;
-    }
+    if (currentStep < steps.length - 1) {
 
-    currentStep++;
-    showStep(currentStep);
+        currentStep++;
+        showStep(currentStep);
+
+    } else {
+
+        submitForm();
+
+    }
 
 });
 
