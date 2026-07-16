@@ -1,125 +1,109 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznSxz0Yo9QbfswPa3McNsVfy3rIWE2aP6-ns5tAwvyo0T5CG7Zn4uMqrgazVoeLdjuEg/exec";
+/* ==========================================
+   UDAYAN CARE CAREER PORTAL
+   Candidate Registration Wizard
+   Developed By: Shubham Sharma
+========================================== */
 
+const formSteps = document.querySelectorAll(".form-step");
+const stepIndicators = document.querySelectorAll(".step");
+const progressBar = document.getElementById("progressBar");
 
-document
-.getElementById("candidateForm")
-.addEventListener("submit", function(e){
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
+let currentStep = 0;
 
-    e.preventDefault();
+// -------------------------------
+// Show Current Step
+// -------------------------------
 
+function showStep(step){
 
+    // Hide all steps
+    formSteps.forEach((form)=>{
+        form.classList.remove("active");
+    });
 
-    let candidateData = {
+    // Show current step
+    formSteps[step].classList.add("active");
 
+    // Update top circles
+    stepIndicators.forEach((item,index)=>{
 
-        candidate_id:
-        "C" + Date.now(),
-
-
-        full_name:
-        document.getElementById("full_name").value,
-
-
-        mobile:
-        document.getElementById("mobile").value,
-
-
-        email:
-        document.getElementById("email").value,
-
-
-        gender:
-        document.getElementById("gender").value,
-
-
-        dob:
-        document.getElementById("dob").value,
-
-
-        state:
-        document.getElementById("state").value,
-
-
-        district:
-        document.getElementById("district").value,
-
-
-        pincode:
-        document.getElementById("pincode").value,
-
-
-        qualification:
-        document.getElementById("qualification").value,
-
-
-        course:"",
-        passing_year:"",
-        experience_type:"",
-        experience_years:"",
-        previous_company:"",
-        previous_role:"",
-        job_role:"",
-        location:"",
-        salary:"",
-        preference:"Job",
-        resume:""
-
-
-    };
-
-
-
-    fetch(SCRIPT_URL, {
-
-
-        method:"POST",
-
-
-        body:JSON.stringify(candidateData)
-
-
-    })
-
-
-    .then(response=>response.json())
-
-
-    .then(data=>{
-
-
-        document.getElementById("message").innerHTML =
-
-        `
-        <div class="alert alert-success">
-        Registration Successful!
-        </div>
-        `;
-
-
-        document.getElementById("candidateForm").reset();
-
-
-    })
-
-
-    .catch(error=>{
-
-
-        document.getElementById("message").innerHTML =
-
-        `
-        <div class="alert alert-danger">
-        Something went wrong!
-        </div>
-        `;
-
-
-        console.log(error);
-
+        if(index<=step){
+            item.classList.add("active");
+        }
+        else{
+            item.classList.remove("active");
+        }
 
     });
 
+    // Progress Bar
+    let percent=((step+1)/formSteps.length)*100;
 
+    progressBar.style.width=percent+"%";
+
+    // Previous Button
+
+    if(step===0){
+
+        prevBtn.style.display="none";
+
+    }else{
+
+        prevBtn.style.display="inline-block";
+
+    }
+
+    // Next Button
+
+    if(step===formSteps.length-1){
+
+        nextBtn.innerHTML="Submit";
+
+    }else{
+
+        nextBtn.innerHTML="Next →";
+
+    }
+
+}
+
+showStep(currentStep);
+
+// -------------------------------
+// Next Button
+// -------------------------------
+
+nextBtn.addEventListener("click",function(){
+
+    // Last Step
+
+    if(currentStep===formSteps.length-1){
+
+        alert("Form Submitted Successfully.");
+
+        return;
+
+    }
+
+    currentStep++;
+
+    showStep(currentStep);
+
+});
+
+// -------------------------------
+// Previous Button
+// -------------------------------
+
+prevBtn.addEventListener("click",function(){
+
+    if(currentStep===0) return;
+
+    currentStep--;
+
+    showStep(currentStep);
 
 });
