@@ -27,15 +27,14 @@ showStep(currentStep);
 
 // NEXT BUTTON
 
-nextBtn.addEventListener("click", function(){
+nextBtn.addEventListener("click", function () {
 
-    if(currentStep < steps.length - 1){
-
-        currentStep++;
-
-        showStep(currentStep);
-
+    if (currentStep === steps.length - 1) {
+        return;
     }
+
+    currentStep++;
+    showStep(currentStep);
 
 });
 
